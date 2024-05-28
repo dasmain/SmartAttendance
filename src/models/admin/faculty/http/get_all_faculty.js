@@ -4,7 +4,7 @@ import { ListResponse, BaseResponse } from "../faculty_model/faculty_model.js";
 class FacultyManager {
   async getAll() {
     const url = ApiConstants.GET_ALL_FACULTY;
-    const token = localStorage.getItem("facultyToken");
+    const token = localStorage.getItem("adminToken");
     try {
       const response = await fetch(url, {
         method: "GET",
