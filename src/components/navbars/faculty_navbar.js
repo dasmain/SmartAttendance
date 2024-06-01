@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import FacultySignoutManager from "../../models/faculty/auth/http/signouthttp";
 import FacultyDetailsManager from "../../models/faculty/auth/http/getdetails";
-
+import Spinner from "../spinner/spinner";
 function FacultyNavbar() {
   const navigate = useNavigate();
   const facultySignoutManager = new FacultySignoutManager();
@@ -18,6 +18,8 @@ function FacultyNavbar() {
   const [leaveMenuOpen, setLeaveMenuOpen] = useState(false);
   const [courseMenuOpen, setCourseMenuOpen] = useState(false);
   const [HomeMenuOpen, setHomeMenuOpen] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -86,6 +88,8 @@ function FacultyNavbar() {
     setOpen(false);
   };
   const handleSignout = async () => {
+    setShowLoading(true);
+try{
     const response = await facultySignoutManager.signout();
     if (response.success) {
       const updatedToastMessages = [
@@ -110,6 +114,19 @@ function FacultyNavbar() {
         },
       ]);
     }
+  }catch(e){
+    setToastMessages([
+      ...toastMessages,
+      {
+        type: "invalid",
+        title: "Error",
+        body: e.message,
+      },
+    ]);
+  }
+  finally{
+    setShowLoading(false);
+  }
   };
   const toggleAccountMenu = () => {
     if (leaveMenuOpen == true) {
@@ -368,15 +385,15 @@ function FacultyNavbar() {
               <div className="flex justify-end mt-5">
                 <button
                   onClick={closeSignOut}
-                  className="text-filter-heading transition-opacity hover:opacity-70 mr-4 border-2 border-gray-400 rounded-[9px] border-filter-heading py-1 px-6"
+                  className="text-filter-heading hover:opacity-80 hover:scale-105 transition-all duration-300 ease-in-out mr-4 border-2 border-gray-400 rounded-[9px] border-filter-heading py-1 px-6"
                 >
                   Cancel
                 </button>
                 <button
-                  className="bg-sa-maroon transition-opacity hover:opacity-70 text-white md:px-7 px-4  rounded-[9px] md:py-2 py-3 "
+                  className="bg-sa-maroon hover:opacity-80 hover:scale-105 transition-all duration-300 ease-in-out text-white md:px-7 px-4  rounded-[9px] md:py-2 py-3 "
                   onClick={handleSignout}
                 >
-                  Sign Out
+                   {showLoading ? <Spinner /> :'Sign Out'}
                 </button>
               </div>
             </div>

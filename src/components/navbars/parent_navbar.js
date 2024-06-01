@@ -5,12 +5,13 @@ import { useNavigate } from "react-router-dom";
 import Toast from "../toast/toast";
 import ParentSignoutManager from "../../models/parent/auth/http/signouthttp";
 import { useLocation } from "react-router-dom";
-
+import Spinner from "../spinner/spinner";
 function ParentNavbar() {
   const parentSignoutManager = new ParentSignoutManager();
   const [open, setOpen] = useState(false);
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const location = useLocation();
+  const [showLoading, setShowLoading] = useState(false);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -40,6 +41,9 @@ function ParentNavbar() {
     setIsSignout(true);
   };
   const handleSignout = async () => {
+    setShowLoading(true);
+
+    try{
     const response = await parentSignoutManager.signout();
     if (response.success) {
       const updatedToastMessages = [
@@ -64,6 +68,21 @@ function ParentNavbar() {
         },
       ]);
     }
+  }
+  catch(e){
+    setToastMessages([
+      ...toastMessages,
+      {
+        type: "invalid",
+        title: "Error",
+        body: e.message,
+      },
+    ]);
+  }
+  finally{
+    setShowLoading(false);
+  }
+
   };
   const handleHomeClick = () => {
     navigate("/parent/dashboard");
@@ -197,15 +216,15 @@ function ParentNavbar() {
               <div className="flex justify-end mt-5">
                 <button
                   onClick={closeSignOut}
-                  className="text-filter-heading transition-opacity hover:opacity-70 mr-4 border-2 border-gray-400 rounded-[9px] border-filter-heading py-1 px-6"
+                  className="text-filter-heading  hover:opacity-80 hover:scale-105 transition-all duration-300 ease-in-out mr-4 border-2 border-gray-400 rounded-[9px] border-filter-heading py-1 px-6"
                 >
                   Cancel
                 </button>
                 <button
-                  className="bg-sa-maroon transition-opacity hover:opacity-70 text-white md:px-7 px-4  rounded-[9px] md:py-2 py-3 "
+                  className="bg-sa-maroon  hover:opacity-80 hover:scale-105 transition-all duration-300 ease-in-out text-white md:px-7 px-4  rounded-[9px] md:py-2 py-3 "
                   onClick={handleSignout}
                 >
-                  Sign Out
+                   {showLoading ? <Spinner /> :'Sign Out'}
                 </button>
               </div>
             </div>

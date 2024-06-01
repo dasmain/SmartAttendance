@@ -68,13 +68,20 @@ function ParentAccountDetails() {
   //   },
   // ];
 
- 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
   return (
     <div className="flex-col">
       <div>
         <ParentNavbar />
       </div>
+      {showLoading && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <Spinner />
+        </div>
+      )}
       <div className="w-full">
         <div className="md:mt-14 mt-10">
           <div className="flex justify-between mx-10 md:mx-24">
@@ -99,7 +106,7 @@ function ParentAccountDetails() {
             </span>
             <span className="text-sa-black font-bold ml-2 md:text-xl">
               {data.map((data, index) => (
-                <span key={index}>{data.Name}</span>
+                <span key={index}>{capitalizeFirstLetter(data.Name)}</span>
               ))}
             </span>
           </div>
@@ -129,7 +136,7 @@ function ParentAccountDetails() {
             </span>
             <span className="text-sa-black font-bold ml-2 md:text-xl">
               {data.map((data, index) => (
-                <span key={index}>{data.StdName}</span>
+                <span key={index}>{capitalizeFirstLetter(data.StdName)}</span>
               ))}
             </span>
           </div>

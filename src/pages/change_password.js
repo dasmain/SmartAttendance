@@ -24,7 +24,6 @@ function ChangePassword() {
   const parentToken = localStorage.getItem("parentToken");
   const studentToken = localStorage.getItem("studentToken");
   const facultyToken = localStorage.getItem("facultyToken");
-console.log(parentToken);
   // const location = useLocation();
   // const searchParams = new URLSearchParams(location.search);
   // const studentToken = searchParams.get("studentToken");
@@ -178,6 +177,7 @@ console.log(parentToken);
       ]);
       return; // Prevent form submission
     }
+    
 
     if (pathname.includes('/student/') ) {
       setShowLoading(true);
@@ -390,7 +390,7 @@ console.log(parentToken);
           id="password2"
           value={confirmPassword}
           onChange={handleConfirmPasswordChange}
-          placeholder="Confirm Password"
+          placeholder="New Password"
         />
         {showPassword2 ? (
           <VisibilityOutlinedIcon
