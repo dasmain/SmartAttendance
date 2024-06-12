@@ -242,7 +242,7 @@ function StudentLogin() {
             className=" fixed inset-0 flex items-center justify-center z-50"
             onClick={closeIsForgot}
           >
-            <div className=" bg-black opacity-50 absolute inset-0"></div>
+            <div className=" bg-black  opacity-50 absolute inset-0"></div>
            
             <Reset_mail studentState={true} closePopup={closeIsForgot}  updateToastMessages={updateToastMessages}/>
           </div>

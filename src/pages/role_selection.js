@@ -25,7 +25,10 @@ function RoleSelect() {
       <div>
         <PlainNavbar />
       </div>
-      <div className="flex flex-col md:flex-row flex-grow justify-center items-center mt-10">
+      {/* <div className="text-sa-maroon text-[36px] md:text-[40px] font-bold mt-20">
+          SELECT ROLE
+        </div> */}
+      <div className="flex flex-col md:flex-row flex-grow justify-center items-center ">
         <div className="w-72 shadow-xl h-96 rounded-3xl mx-10 md:my-0 my-10">
           <div>
             <img src={Teacher} />
@@ -34,7 +37,7 @@ function RoleSelect() {
             <button className="bg-sa-maroon hover:scale-110 transition-all duration-300 ease-in-out  rounded-xl w-48 h-12 shadow-md mx-5"
             onClick={goToFacultyLogin}>
               <span className="text-white font-bold text-xl">
-                Go To Faculty
+               Faculty Login
               </span>
             </button>
           </div>
@@ -47,7 +50,7 @@ function RoleSelect() {
             <button className="bg-sa-maroon hover:scale-110 transition-all duration-300 ease-in-out rounded-xl w-48 h-12 shadow-md mx-5"
             onClick={goToStudentLogin}>
               <span className="text-white font-bold text-xl">
-                Go To Student
+               Student Login
               </span>
             </button>
           </div>
@@ -60,7 +63,9 @@ function RoleSelect() {
             <button className="bg-sa-maroon hover:scale-110 transition-all duration-300 ease-in-out rounded-xl w-48 h-12 shadow-md mx-5"
             onClick={goToParentLogin}
             >
-              <span className="text-white font-bold text-xl">Go To Parent</span>
+              <span className="text-white font-bold text-xl">
+                Parent Login
+                </span>
             </button>
           </div>
         </div>

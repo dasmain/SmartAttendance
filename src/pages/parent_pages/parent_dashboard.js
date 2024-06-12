@@ -112,6 +112,7 @@ function ParentDashboard() {
     presentHours: data.present_hours,
     absentHours: data.absent_hours,
     totalHours: data.total_hours,
+    leaveHours: data.leave_hours,
   })) : [];
   const calculatePercentage = (presentHours, totalHours) => {
 
@@ -193,6 +194,9 @@ function ParentDashboard() {
                     Absent Hours
                   </th>
                   <th className="p-0 py-5  border-r border-sa-grey">
+                    Leave Hours
+                  </th>
+                  <th className="p-0 py-5  border-r border-sa-grey">
                     Total Hours
                   </th>
                 </tr>
@@ -240,6 +244,14 @@ function ParentDashboard() {
                         className="block w-full h-full overflow-hidden overflow-ellipsis"
                         style={{ wordWrap: "break-word" }}
                       >
+                        {faculty.leaveHours}
+                      </span>
+                    </td>
+                    <td className="p-0 py-5  border-r  border-sa-grey">
+                      <span
+                        className="block w-full h-full overflow-hidden overflow-ellipsis"
+                        style={{ wordWrap: "break-word" }}
+                      >
                         {faculty.totalHours}
                       </span>
                     </td>
@@ -259,6 +271,7 @@ function ParentDashboard() {
                 ))}
                 <tr className="border-b-0">
                   <td className="md:py-32 py-16 border-r border-sa-grey w-[100px]"></td>
+                  <td className="md:py-32 py-16 border-r border-sa-grey"></td>
                   <td className="md:py-32 py-16 border-r border-sa-grey"></td>
                   <td className="md:py-32 py-16 border-r border-sa-grey"></td>
                   <td className="md:py-32 py-16 border-r border-sa-grey"></td>

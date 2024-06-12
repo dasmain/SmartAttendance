@@ -125,7 +125,7 @@ function Reset_mail({ studentState, parentState, facultyState, closePopup,update
                 />
             ))}
             <div className="flex z-50  justify-center items-center ">
-                <div className="mx-2  md:w-[460px] w-[320px] md:h-[200px] h-[250px] md:mb-[14vh] md:mt-[5vh] mt-5 block bg-clue-black">
+                <div className="mx-2  md:w-[460px] w-[320px] h-auto md:mt-[5vh] mt-5 block bg-clue-black">
                     <p className="md:mr-[117px] md:text-[24px] text-[22px] mr-[250px] md:w-[320px] w-[280px] md:mt-0 mt-10 md:mb-5 mb-5 font-[700] leading-tight text-sa-black">
                         <WestIcon className="text-clue-yellow mr-3 mb-1 cursor-pointer transition-opacity hover:opacity-70"
                             onClick={handleBackClick}
@@ -149,7 +149,7 @@ function Reset_mail({ studentState, parentState, facultyState, closePopup,update
 
                         <button
                             type="button"
-                            className="mb-2 block md:mx-14 md:w-[370px] md:mt-9 mt-8 mx-10 md:h-[56px] h-[50px] w-[245px] bg-sa-maroon rounded-[10px]  text-center text-[19px] md:text-2xl font-[700] leading-normal text-white hover:scale-105 transition-all duration-300 ease-in-out hover:text-gray-300 hover:opacity-85"
+                            className="mb-14 block md:mx-14 md:w-[370px] md:mt-9 mt-8 mx-10 md:h-[56px] h-[50px] w-[245px] bg-sa-maroon rounded-[10px]  text-center text-[19px] md:text-2xl font-[700] leading-normal text-white hover:scale-105 transition-all duration-300 ease-in-out hover:text-gray-300 hover:opacity-85"
                             onClick={handleSendLink}
                         >
             {showLoading ? <Spinner /> : 'Send Link'}

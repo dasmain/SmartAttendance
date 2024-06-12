@@ -52,6 +52,7 @@ function StudentDashboard() {
     presentHours: data.present_hours,
     absentHours: data.absent_hours,
     totalHours: data.total_hours,
+    leaveHours:data.leave_hours
   })) : [];
   const calculatePercentage = (presentHours, totalHours) => {
 
@@ -126,8 +127,11 @@ function StudentDashboard() {
                     Absent Hours
                   </th>
                   <th className="p-0 py-5  border-r border-sa-grey">
-                    Total Hours
+                    Leave Hours
                   </th>
+                  <th className="p-0 py-5  border-r border-sa-grey">
+                    Total Hours
+                  </th>              
                   <th className="p-0 py-5  border-sa-grey">
                     Details
                   </th>
@@ -176,10 +180,18 @@ function StudentDashboard() {
                         className="block w-full h-full overflow-hidden overflow-ellipsis"
                         style={{ wordWrap: "break-word" }}
                       >
+                        {faculty.leaveHours}
+                      </span>
+                    </td>
+                    <td className="p-0 py-5  border-r  border-sa-grey">
+                      <span
+                        className="block w-full h-full overflow-hidden overflow-ellipsis"
+                        style={{ wordWrap: "break-word" }}
+                      >
                         {faculty.totalHours}
                       </span>
                     </td>
-
+                   
                     <td className="p-2 py-5  border-sa-grey">
                       <div class="lg:inline-flex rounded-lg border  bg-sa-pink p-1">
 
@@ -196,6 +208,7 @@ function StudentDashboard() {
                 ))}
                 <tr className="border-b-0">
                   <td className="md:py-32 py-16 border-r border-sa-grey w-[100px]"></td>
+                  <td className="md:py-32 py-16 border-r border-sa-grey"></td>
                   <td className="md:py-32 py-16 border-r border-sa-grey"></td>
                   <td className="md:py-32 py-16 border-r border-sa-grey"></td>
                   <td className="md:py-32 py-16 border-r border-sa-grey"></td>
