@@ -249,7 +249,7 @@ function FacultyAdboard() {
                           className="block w-full h-full overflow-hidden overflow-ellipsis"
                           style={{ wordWrap: "break-word" }}
                         >
-                          {faculty.isStudentAdvisor == "true" ? "Yes" : "No"}
+                          {faculty.isStudentAdvisor === "true" ? "Yes" : "No"}
                         </span>
                       </td>
                       <td className="xl:inline-flex items-center justify-center w-full h-full  overflow-hidden overflow-ellipsisp-2 py-5  border-sa-grey">

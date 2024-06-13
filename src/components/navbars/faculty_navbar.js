@@ -311,7 +311,7 @@ try{
           >
             Home
           </span>
-          {isStudentAdvisor && ( 
+          {isStudentAdvisor ==="true" && ( 
           <span
           onMouseEnter={toggleCourseMenu}
           className="transition-opacity hover:opacity-60 text-xl text-white font-bold mx-5 hover:cursor-pointer"
@@ -322,7 +322,7 @@ try{
           </span>
            )} 
            
-          {isStudentAdvisor && ( 
+          {isStudentAdvisor ==="true" && ( 
           <span
             onMouseEnter={toggleLeaveMenu}
             onClick={handleLeaveClick}

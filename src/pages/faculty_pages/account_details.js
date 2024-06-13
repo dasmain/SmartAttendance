@@ -50,7 +50,7 @@ function FacultyAccountDetails() {
         Name: facultyData.name,
         Email: facultyData.email,
         ContactNo: facultyData.contactno,
-        isStudentAdvisor: facultyData.isStudentAdvisor ? "Yes" : "No",
+        isStudentAdvisor: facultyData.isStudentAdvisor == "true" ? "Yes" : "No",
       },
     ]
   : [];
