@@ -322,7 +322,7 @@ function MarkAttendance() {
     useEffect(() => {
         if (isConfirm) {
             window.scrollTo({
-                top: window.scrollY + 800,
+                top: window.scrollY + 700,
                 behavior: 'smooth',
             });
         }

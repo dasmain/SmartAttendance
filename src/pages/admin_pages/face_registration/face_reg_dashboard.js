@@ -448,7 +448,7 @@ function FacialRegAdboard() {
                                                             <input
                                                                 type="file"
                                                                 accept="video/*"
-                                                                className="shadow-xl cursor-pointer focus:outline-none focus:ring-0 focus:border-clue-purchase peer m-0 block h-[60px] md:h-[60px] md:mr-44 md:w-[102%] w-[245px] rounded-[14px] border-[1px] border-solid border-black bg-transparent bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-black"
+                                                                className="cursor-pointer focus:outline-none focus:ring-0 focus:border-clue-purchase peer m-0 block h-[60px] md:h-[60px] md:mr-44 md:w-[102%] w-[245px] rounded-[14px] border-[1px] border-solid border-black bg-transparent bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-black"
                                                                 id="videoUpload"
                                                                 onChange={handleVideoUpload}
                                                             />

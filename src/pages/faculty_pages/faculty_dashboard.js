@@ -175,7 +175,7 @@ function FacultyDashboard() {
             </span>
             
           </div>
-          <div className="overflow-x-auto mt-10 mx-10 md:ml-[6%] md:w-[90%] md:shadow-xl rounded-2xl">
+          <div className="overflow-x-auto mt-10 mx-10 md:ml-[6%] md:w-[90%] mb-20 md:shadow-xl rounded-2xl">
             <table className="table-fixed min-w-full bg-sa-pink w-[800px] md:w-[50vw] rounded-2xl">
               <thead>
                 <tr className="border-b border-sa-grey">
